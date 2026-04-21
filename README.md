@@ -60,7 +60,7 @@ Current research interests are in Program analysis (in particular):
 **Previous students** (link to their thesis):
 
 - 2025: [Ian Grinspan](https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_Ian_RdHFhKy.pdf) (co-director Javier Godoy), [Felicitas Garcia](https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_Felicitas_Garc%C3%ADa.pdf) (co-director Javier Godoy), [Leo Mansini](https://gestion.dc.uba.ar/media/academic/grade/thesis/Tesis_Mansini_v7.1.pdf)
-- 2024: [Dago de Renteria y Melissa Regnier](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-03-250-Renteria-Regnier.pdf) (co-director JP Galeotti) [Daniel Wappner](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-07-15-Wappner-Daniel.pdf) (co-advisor Javier Godoy), [Patricio Sabogal](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-10-22-Patricio-Sagobal.pdf),[Gabriela Croce](https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_2_xZVIWXA.pdf) (co-advisor Virginia Brassesco)
+- 2024: [Dago de Renteria y Melissa Regnier](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-03-250-Renteria-Regnier.pdf) (co-director JP Galeotti) [Daniel Wappner](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-07-15-Wappner-Daniel.pdf) (co-advisor Javier Godoy), [Patricio Sabogal](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-10-22-Patricio-Sagobal.pdf), [Gabriela Croce](https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_2_xZVIWXA.pdf) (co-advisor Virginia Brassesco)
 - 2023: [Pablo Balbi](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2023-09-10-Balbi-Pablo.pdf)
 - 2021: [Dardo Marasca](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2021-02-22-Marasca-Dardo.pdf) (co-advisor Guido Chari), [Francisco Curdi](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2021-06-09-Curdi-Francisco.pdf) (co-advisor Edgardo Zoppi)
 - 2019: [Vera Bogdanich](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2019-12-17-Vera-Bogdanich.pdf), [Manuel Carrasco](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2019-11-14-Manuel-Carrasco.pdf) (co-advisor Juan Manuel Martinez Caamaño)
@@ -125,4 +125,3 @@ Analysis of .NET programs:
 ## Links
 
 If you wish, you may also contact me through [Facebook](http://www.facebook.com/diego.garbervetsky) or [Mendeley](http://www.mendeley.com/profiles/diego-garbervetsky).
-
