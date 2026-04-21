@@ -21,7 +21,7 @@ Twitter: [@diegogarber](https://twitter.com/diegogarber)
 Current research interests are in Program analysis (in particular):
 
 - Program understanding.
-- Testing and verification of program featuring rich protocols
+- Testing and verification of programs featuring rich protocols
 - Static analysis aimed at program verification of Java like programs.
 - Automatic symbolic resource analysis (gas consumption, dynamic memory, energy, etc)
 
@@ -110,7 +110,7 @@ Analysis of heap memory consumption:
 - [JConsume2](http://lafhis.dc.uba.ar/users/~diegog/JConsume2/): A compositional analysis for inferring heap memory consumption in Java.
 - [Consume.Net](http://lafhis.dc.uba.ar/consume.net): A compositional analysis for inferring heap memory consumption in .Net Programs.
 - [Resource Contracts.NET](http://dependex/resourcecontracts/): An extenstion of Code Contracts to specify and verify memory consumption constraints in .NET programs.
-- [JScoper](http://www.lafhis.dc.uba.ar/dependex/jscoper/): An Eclipse plug-in that assist transalation of Java applications to Java Real Time ones.
+- [JScoper](http://www.lafhis.dc.uba.ar/dependex/jscoper/): An Eclipse plug-in that assists translation of Java applications to Java Real Time ones.
 
 Verification:
 
@@ -125,7 +125,6 @@ Analysis of .NET programs:
 ## Links
 
 If you wish, you may also contact me through [Facebook](http://www.facebook.com/diego.garbervetsky) or [Mendeley](http://www.mendeley.com/profiles/diego-garbervetsky).
-
 
 
 
