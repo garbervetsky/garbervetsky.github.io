@@ -18,7 +18,7 @@ Twitter: [@diegogarber](https://twitter.com/diegogarber)
 
 ## Research
 
-Current researh interests are in Program analysis (in particular):
+Current research interests are in Program analysis (in particular):
 
 - Program understanding.
 - Testing and verification of program featuring rich protocols
@@ -116,7 +116,7 @@ Verification:
 
 - [BudaPest](http://lafhis.dc.uba.ar/dependex/budapest/): An automated software verifier of imperative programs.
 - [VInTime](http://www.lafhis.dc.uba.ar/dependex/vintime/): A tool suite for the verification of Real Time systems.
-- [ObsSlice](http://www.lafhis.dc.uba.ar/dependex/obsslice/): A timed Automa Slicer based on Observers.
+- [ObsSlice](http://www.lafhis.dc.uba.ar/dependex/obsslice/): A timed Automata Slicer based on Observers.
 
 Analysis of .NET programs:
 
@@ -125,7 +125,6 @@ Analysis of .NET programs:
 ## Links
 
 If you wish, you may also contact me through [Facebook](http://www.facebook.com/diego.garbervetsky) or [Mendeley](http://www.mendeley.com/profiles/diego-garbervetsky).
-
 
 
 
