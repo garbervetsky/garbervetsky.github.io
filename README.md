@@ -68,7 +68,7 @@ Current research interests are in Program analysis (in particular):
 - 2017: [Patricio Palladino](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2017-05-15-Palladino-Patricio.pdf)
 - 2016: [Leandro Lera Romero](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2016-04-14-Lera-Romero-Leandro.pdf),  [Ivan Postolski](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2016-03-16-Polstolski-Ivan.pdf) (co-advisor Victor Braberman)
 - 2015: [Sebastian Lamelas Marcote](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2015-11-24-Lamelas-Sebastian.pdf) (co-advisor Martin Montperrus)
-- 2013: [Fernando Paulovsky](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2013-11-04-Paulovsky-Fernando.pdf) (co-advisor Esteban Pavese), [Juan Manuel Martinez Caamaño](http://lafhis.dc.uba.ar/users/~diegog/2013-10-03-Martinez-JuanManuel.pdf) (co-advisor Philippe Clauss)
+- 2013: [Fernando Paulovsky](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2013-11-04-Paulovsky-Fernando.pdf) (co-advisor Esteban Pavese), [Juan Manuel Martinez Caamaño](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2013-10-03-Martinez-JuanManuel.pdf) (co-advisor Philippe Clauss)
 - 2012: [Edgardo Zoppi](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2012-12-18-Zoppi-Edgardo.pdf) (co-advisor G. de Caso), [Marcos Chicote](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2012-05-10-Chicote-Marcos.pdf) (co-advisor J.P. Galeotti)
 - 2011: [Bruno Cuervo Parino](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2011-05-20-Cuervo-Bruno.pdf) (co-advisor J.P. Galeotti), [Jonathan Tapicer](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2011-02-11-Tapicer-Jonathan.pdf) (co-advisor M. Rouaux)
 - 2010: [Pablo Bendersky](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-02-17-Bendersky-Pablo.pdf) (co-advisor J.P. Galeotti), [Ariel Neisen](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-04-27-Neisen-Ariel.pdf) (co-advisor D. Gorin), [Fernando Benavidez](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-07-20-Benavidez-Fernando.pdf) (co-advisor D. Gorin), [Alexis Tchach](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-07-21-Tcach-Alexis.pdf) (co-advisor G. de Caso), [Matias Grumberg and Gaston Krasny](http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-12-22-Gumberg-Krasny.pdf) (co-advisor M. Rouaux)
@@ -102,14 +102,14 @@ Current research interests are in Program analysis (in particular):
 
 Automatic abstraction for behavior validation:
 
-- [Contractor](/dependex/contractor/Welcome.html): An automated tool that takes a software contract or an API source code and generates a finite abstract representation useful for its validation
+- [Contractor](http://lafhis.dc.uba.ar/dependex/contractor/Welcome.html): An automated tool that takes a software contract or an API source code and generates a finite abstract representation useful for its validation
 - [Contractor.NET](http://lafhis.dc.uba.ar/contractor/contractor.net-web/): A Visual Studio extension for .NET validation and specification strengthening.
 
 Analysis of heap memory consumption:
 
 - [JConsume2](http://lafhis.dc.uba.ar/users/~diegog/JConsume2/): A compositional analysis for inferring heap memory consumption in Java.
 - [Consume.Net](http://lafhis.dc.uba.ar/consume.net): A compositional analysis for inferring heap memory consumption in .Net Programs.
-- [Resource Contracts.NET](http://dependex/resourcecontracts/): An extenstion of Code Contracts to specify and verify memory consumption constraints in .NET programs.
+- [Resource Contracts.NET](http://lafhis.dc.uba.ar/dependex/resourcecontracts/): An extension of Code Contracts to specify and verify memory consumption constraints in .NET programs.
 - [JScoper](http://www.lafhis.dc.uba.ar/dependex/jscoper/): An Eclipse plug-in that assists translation of Java applications to Java Real Time ones.
 
 Verification:
@@ -125,5 +125,4 @@ Analysis of .NET programs:
 ## Links
 
 If you wish, you may also contact me through [Facebook](http://www.facebook.com/diego.garbervetsky) or [Mendeley](http://www.mendeley.com/profiles/diego-garbervetsky).
-
 
