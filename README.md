@@ -4,13 +4,18 @@ FTA Professor @ [LaFHIS](http://lafhis.dc.uba.ar/), [DC](http://www.dc.uba.ar/),
 
 ## About
 
+<table><tr>
+<td><img src="https://lafhis.dc.uba.ar/sites/default/files/images/updated_2019/DiegoGarbervetskybOK.jpg" alt="Dr. Diego Garbervetsky" width="180"/></td>
+<td>
+
 I am an Associate Professor at the [Computer Science Department](http://www.dc.uba.ar/), [School of Sciences](http://www.fcen.uba.ar/), [University of Buenos Aires](http://www.uba.ar/). I am also a Researcher at the [ICC](https://icc.fcen.uba.ar/)/[CONICET](http://www.conicet.gov.ar/). I am also Director of the [Institute of Research in Computer Sciences (ICC)](https://icc.fcen.uba.ar/).
 
 I work on static analysis techniques aimed at Java-like programs and Smart Contracts, automated program verification, program understanding and validation.
 
-Phone: +54 11 5285-7482  
-Email: [diegog@dc.uba.ar](mailto:diegog@dc.uba.ar)  
-Twitter: [@diegogarber](https://twitter.com/diegogarber)
+Phone: +54 11 5285-7482, email: [diegog@dc.uba.ar](mailto:diegog@dc.uba.ar). Twitter: [@diegogarber](https://twitter.com/diegogarber)
+
+</td>
+</tr></table>
 
 ## News
 
