@@ -55,7 +55,7 @@ Current research interests are in Program analysis (in particular):
 - [Rodrigo Castaño](http://www.lafhis.dc.uba.ar/~rcastano) (currently at Microsoft)
 - [Sven Stork](https://www.linkedin.com/in/stork/) now at Duolingo
 
-### Undergraduate Students (simil to MSc thesis)
+### Undergraduate Students (similar to MSc thesis)
 
 **Previous students** (link to their thesis):
 
@@ -125,6 +125,5 @@ Analysis of .NET programs:
 ## Links
 
 If you wish, you may also contact me through [Facebook](http://www.facebook.com/diego.garbervetsky) or [Mendeley](http://www.mendeley.com/profiles/diego-garbervetsky).
-
 
 
