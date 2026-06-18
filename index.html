@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego Garbervetsky — Program Analysis & Verification</title>
+<meta name="description" content="Diego Garbervetsky — Associate Professor at the University of Buenos Aires, Director of ICC/CONICET. Research in static analysis, automated verification and program understanding.">
+<meta property="og:title" content="Dr. Diego Garbervetsky">
+<meta property="og:description" content="Associate Professor @ UBA · Director ICC/CONICET · Static analysis, automated verification, program understanding.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAFB;
+    --surface: #FFFFFF;
+    --surface-2: #F2F3F7;
+    --border: #E4E6EC;
+    --ink: #14181F;
+    --text: #3A404C;
+    --muted: #6B7280;
+    --accent: #4F46E5;
+    --accent-strong: #4338CA;
+    --accent-soft: #EEF0FE;
+    --shadow: 0 1px 2px rgba(20,24,31,.04), 0 8px 24px rgba(20,24,31,.05);
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --maxw: 980px;
+  }
+  [data-theme="dark"] {
+    --bg: #0C0F16;
+    --surface: #131825;
+    --surface-2: #1A2030;
+    --border: #283041;
+    --ink: #EDEFF5;
+    --text: #C0C6D2;
+    --muted: #8B93A4;
+    --accent: #8E86FF;
+    --accent-strong: #A8A2FF;
+    --accent-soft: #1B2034;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    transition: background .3s ease, color .3s ease;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Nav ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner { display: flex; align-items: center; gap: 20px; height: 60px; }
+  .brand {
+    font-family: var(--mono); font-size: .82rem; font-weight: 500;
+    color: var(--ink); letter-spacing: .02em; white-space: nowrap;
+  }
+  .brand .dot { color: var(--accent); }
+  .nav-links { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+  .nav-links a {
+    font-size: .85rem; color: var(--muted); padding: 6px 10px; border-radius: 7px;
+    transition: color .15s, background .15s;
+  }
+  .nav-links a:hover { color: var(--ink); background: var(--surface-2); text-decoration: none; }
+  .theme-btn {
+    display: grid; place-items: center; width: 34px; height: 34px;
+    border: 1px solid var(--border); border-radius: 8px; background: var(--surface);
+    color: var(--ink); cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  .theme-btn:hover { border-color: var(--accent); }
+  .theme-btn svg { width: 16px; height: 16px; }
+  @media (max-width: 720px) { .nav-links a:not(.persist) { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 64px 0 28px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 220px; gap: 44px; align-items: start; }
+  .eyebrow {
+    font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: var(--display); font-weight: 700; color: var(--ink);
+    font-size: clamp(2.1rem, 5.5vw, 3.1rem); line-height: 1.05;
+    letter-spacing: -.02em; margin: 0 0 14px;
+  }
+  .role { font-size: 1.05rem; color: var(--ink); font-weight: 500; margin: 0 0 6px; }
+  .affil { font-size: .95rem; color: var(--muted); margin: 0 0 22px; }
+  .lede { font-size: 1.02rem; max-width: 46ch; margin: 0 0 26px; }
+  .lede b { color: var(--ink); font-weight: 600; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--mono); font-size: .78rem; font-weight: 400;
+    color: var(--text); background: var(--surface); border: 1px solid var(--border);
+    padding: 7px 12px; border-radius: 999px; transition: border-color .15s, color .15s, transform .15s;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+  .chip svg { width: 14px; height: 14px; flex: none; }
+
+  .portrait { position: relative; }
+  .portrait img {
+    width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 16px;
+    border: 1px solid var(--border); box-shadow: var(--shadow); display: block;
+  }
+  .portrait .tag {
+    position: absolute; left: 12px; bottom: 12px;
+    font-family: var(--mono); font-size: .68rem; color: #fff;
+    background: rgba(20,24,31,.62); backdrop-filter: blur(4px);
+    padding: 4px 9px; border-radius: 7px; letter-spacing: .04em;
+  }
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+    .portrait { max-width: 200px; order: -1; }
+  }
+
+  /* ---------- Section divider (the signature: a labeled state→transition) ---------- */
+  section { padding: 30px 0; scroll-margin-top: 76px; }
+  .sec-head { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; }
+  .sec-head .node {
+    width: 11px; height: 11px; border-radius: 50%; flex: none;
+    border: 2px solid var(--accent); background: var(--bg);
+  }
+  .sec-head .rail { flex: none; width: 30px; height: 2px; background: var(--accent); position: relative; }
+  .sec-head .rail::after {
+    content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
+    border-left: 6px solid var(--accent); border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+  }
+  .sec-head h2 {
+    font-family: var(--mono); font-size: .8rem; font-weight: 500; letter-spacing: .1em;
+    text-transform: lowercase; color: var(--muted); margin: 0;
+  }
+  .sec-head h2 b { color: var(--ink); font-weight: 600; }
+
+  h3 { font-family: var(--display); color: var(--ink); font-size: 1.05rem; font-weight: 600; margin: 26px 0 12px; letter-spacing: -.01em; }
+  p { margin: 0 0 14px; }
+
+  /* ---------- Research tags ---------- */
+  .ri-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .ri-list li {
+    display: flex; gap: 12px; align-items: baseline;
+    padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  }
+  .ri-list .k { font-family: var(--mono); font-size: .72rem; color: var(--accent); flex: none; padding-top: 2px; }
+  .ri-list .v b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Card grids ---------- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .card {
+    display: block; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 18px; transition: border-color .15s, transform .15s, box-shadow .15s;
+  }
+  a.card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); text-decoration: none; }
+  .card .ct { font-family: var(--display); font-weight: 600; color: var(--ink); font-size: .98rem; margin: 0 0 4px; }
+  .card .cd { font-size: .85rem; color: var(--muted); margin: 0; line-height: 1.5; }
+  .card-group { margin-top: 18px; }
+  .card-group .gl { font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; text-transform: uppercase; }
+
+  /* ---------- People ---------- */
+  .people { display: flex; flex-wrap: wrap; gap: 8px; }
+  .person {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+    padding: 6px 14px; font-size: .9rem; color: var(--ink); transition: border-color .15s, color .15s;
+  }
+  a.person:hover { border-color: var(--accent); text-decoration: none; }
+  .person .where { color: var(--muted); font-size: .82rem; }
+
+  .roster { display: grid; gap: 18px; }
+  .roster .rg .rl { font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; color: var(--accent); margin: 0 0 9px; text-transform: uppercase; }
+
+  /* ---------- Lists ---------- */
+  ul.clean { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+  ul.clean li { padding-left: 18px; position: relative; }
+  ul.clean li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-size: .8rem; top: 2px; }
+
+  .teaching-now {
+    background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+    border-radius: 12px; padding: 14px 18px; margin: 0 0 16px;
+  }
+  .teaching-now .lbl { font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .teaching-now b { color: var(--ink); font-family: var(--display); font-size: 1.05rem; }
+
+  details.theses { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); padding: 4px 18px; margin-top: 14px; }
+  details.theses summary {
+    cursor: pointer; font-family: var(--mono); font-size: .82rem; color: var(--ink);
+    padding: 12px 0; list-style: none; display: flex; align-items: center; gap: 10px;
+  }
+  details.theses summary::-webkit-details-marker { display: none; }
+  details.theses summary .arw { color: var(--accent); transition: transform .2s; display: inline-block; }
+  details.theses[open] summary .arw { transform: rotate(90deg); }
+  .yearrow { display: grid; grid-template-columns: 56px 1fr; gap: 14px; padding: 11px 0; border-top: 1px solid var(--border); font-size: .9rem; }
+  .yearrow .yr { font-family: var(--mono); font-size: .8rem; color: var(--accent); }
+  .yearrow .nm a { color: var(--text); }
+  .yearrow .nm a:hover { color: var(--accent); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--border); margin-top: 30px; padding: 34px 0 48px;
+    color: var(--muted); font-size: .85rem;
+  }
+  footer .frow { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .fnote { font-family: var(--mono); font-size: .72rem; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <span class="brand">diego<span class="dot">.</span>garbervetsky</span>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#students">Students</a>
+      <a href="#tools">Tools</a>
+      <button class="theme-btn persist" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Program analysis · verification · UBA / CONICET</p>
+        <h1>Diego Garbervetsky</h1>
+        <p class="role">Associate Professor &amp; Director of ICC</p>
+        <p class="affil">
+          <a href="http://lafhis.dc.uba.ar/">LaFHIS</a> ·
+          <a href="http://www.dc.uba.ar/">Computer Science Dept.</a> ·
+          <a href="http://exactas.uba.ar/">FCEyN</a> ·
+          <a href="http://www.uba.ar/">Universidad de Buenos Aires</a> · ICC / CONICET
+        </p>
+        <p class="lede">
+          I build <b>static analysis</b> techniques for Java-like programs and smart contracts —
+          spanning <b>automated verification</b>, <b>program understanding</b>, and
+          <b>symbolic resource analysis</b> of memory, gas and energy.
+        </p>
+        <div class="chips">
+          <a class="chip" href="mailto:diegog@dc.uba.ar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            diegog@dc.uba.ar
+          </a>
+          <a class="chip" href="https://scholar.google.com/citations?user=dXb-veoAAAAJ&hl=en">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v3.3L12 20l7-3.5v-3.3L12 17l-7-3.8z"/></svg>
+            Google Scholar
+          </a>
+          <a class="chip" href="https://dblp.org/pid/g/DiegoGarbervetsky.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/></svg>
+            DBLP
+          </a>
+          <a class="chip" href="https://twitter.com/diegogarber">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.1L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg>
+            @diegogarber
+          </a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="https://lafhis.dc.uba.ar/sites/default/files/images/updated_2019/DiegoGarbervetskybOK.jpg"
+             alt="Portrait of Diego Garbervetsky" loading="eager">
+        <figcaption class="tag">Buenos Aires, AR</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="sec-head"><span class="node"></span><span class="rail"></span><h2><b>about</b></h2></div>
+    <p>
+      I am an Associate Professor at the <a href="http://www.dc.uba.ar/">Computer Science Department</a>,
+      <a href="http://www.fcen.uba.ar/">School of Sciences</a>,
+      <a href="http://www.uba.ar/">University of Buenos Aires</a>, and a Researcher at
+      <a href="https://icc.fcen.uba.ar/">ICC</a> / <a href="http://www.conicet.gov.ar/">CONICET</a>.
+      I currently serve as Director of the Institute of Research in Computer Science (ICC).
+    </p>
+    <p>
+      My work centers on static analysis aimed at Java-like programs and smart contracts, automated program
+      verification, and program understanding and validation. I am also interested in technology transfer,
+      having collaborated on projects with Microsoft, GitHub, OpenZeppelin, Medallia and other companies
+      and public institutions.
+    </p>
+    <p style="font-family:var(--mono); font-size:.85rem; color:var(--muted); margin-top:18px;">
+      ☎ +54 11 5285-7482 &nbsp;·&nbsp; ✉ <a href="mailto:diegog@dc.uba.ar">diegog@dc.uba.ar</a>
+    </p>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="sec-head"><span class="node"></span><span class="rail"></span><h2><b>research</b> interests</h2></div>
+    <ul class="ri-list">
+      <li><span class="k">01</span><span class="v"><b>Program understanding.</b> Recovering models and behavioral abstractions that make complex software intelligible.</span></li>
+      <li><span class="k">02</span><span class="v"><b>Testing &amp; verification of rich-protocol programs.</b> Reasoning about components that expose stateful, protocol-driven interfaces.</span></li>
+      <li><span class="k">03</span><span class="v"><b>Static analysis for verification.</b> Sound analyses targeting verification of Java-like programs.</span></li>
+      <li><span class="k">04</span><span class="v"><b>Symbolic resource analysis.</b> Inferring gas consumption, dynamic memory and energy use automatically.</span></li>
+    </ul>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="sec-head"><span class="node"></span><span class="rail"></span><h2><b>publications</b></h2></div>
+    <p>A full, up-to-date record lives on these profiles. Most PDFs are collected on the UBA publications server.</p>
+    <div class="grid">
+      <a class="card" href="https://scholar.google.com/citations?user=dXb-veoAAAAJ&hl=en">
+        <p class="ct">Google Scholar</p><p class="cd">Citations &amp; co-authors</p></a>
+      <a class="card" href="https://dblp.org/pid/g/DiegoGarbervetsky.html">
+        <p class="ct">DBLP</p><p class="cd">Complete bibliography</p></a>
+      <a class="card" href="http://dl.acm.org/author_page.cfm?id=81321487812">
+        <p class="ct">ACM Digital Library</p><p class="cd">Author page</p></a>
+      <a class="card" href="https://www.researchgate.net/profile/Diego_Garbervetsky">
+        <p class="ct">ResearchGate</p><p class="cd">Profile &amp; preprints</p></a>
+      <a class="card" href="http://publicaciones.dc.uba.ar/Publications/show.php?author=Garbervetsky">
+        <p class="ct">PDF archive</p><p class="cd">Most papers, downloadable</p></a>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <div class="sec-head"><span class="node"></span><span class="rail"></span><h2><b>teaching</b></h2></div>
+    <div class="teaching-now">
+      <span class="lbl">Currently teaching</span>
+      <b>Ingeniería de Software 2</b>
+    </div>
+    <h3 style="margin-top:18px">Previously</h3>
+    <ul class="clean">
+      <li>Algoritmos y Estructuras de Datos 1 / 2</li>
+      <li>Automatic Software Validation and Verification</li>
+      <li>Automatic Program Analysis</li>
+      <li>Paradigmas de Programación</li>
+      <li>Organización del Computador 1 (verano)</li>
+    </ul>
+  </section>
+
+  <!-- STUDENTS -->
+  <section id="students">
+    <div class="sec-head"><span class="node"></span><span class="rail"></span><h2><b>students</b> &amp; mentoring</h2></div>
+
+    <div class="roster">
+      <div class="rg">
+        <p class="rl">Current PhD students</p>
+        <div class="people">
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~dwappner">Daniel Wappner</a>
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~asoifer">Alexis Soifer</a>
+        </div>
+      </div>
+
+      <div class="rg">
+        <p class="rl">Former PhD students</p>
+        <div class="people">
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~jgodoy">Javier Godoy</a>
+          <a class="person" href="https://melkyades.github.io/">Javier Pimas <span class="where">· Quorum Software</span></a>
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~gchari">Guido Chari <span class="where">· Veritran</span></a>
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~rcastano">Rodrigo Castaño <span class="where">· Microsoft</span></a>
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~ezoppi">Edgardo Zoppi <span class="where">· Worcket</span></a>
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~gdecaso">Guido de Caso <span class="where">· Dialpad</span></a>
+        </div>
+      </div>
+
+      <div class="rg">
+        <p class="rl">Current postdocs</p>
+        <div class="people">
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~jgodoy">Javier Godoy</a>
+        </div>
+      </div>
+
+      <div class="rg">
+        <p class="rl">Former postdocs</p>
+        <div class="people">
+          <a class="person" href="http://www.lafhis.dc.uba.ar/~rcastano">Rodrigo Castaño <span class="where">· Microsoft</span></a>
+          <a class="person" href="https://www.linkedin.com/in/stork/">Sven Stork <span class="where">· Duolingo</span></a>
+        </div>
+      </div>
+    </div>
+
+    <details class="theses">
+      <summary><span class="arw">▸</span> Undergraduate &amp; MSc-equivalent theses · 2006–2026</summary>
+      <div class="yearrow"><span class="yr">2025–26</span><span class="nm">Ana Roizen · Paulo Casullo · Sergio Cantore · Fernando Andrada · Tomás Scally · Franco Castelacci · Mariano Dal Vechio · Matías Incem · Alejandra Rodriguez · Matías Entin · Darío Guzik <em>(theses &amp; mentoring)</em></span></div>
+      <div class="yearrow"><span class="yr">2025</span><span class="nm"><a href="https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_Ian_RdHFhKy.pdf">Ian Grinspan</a> · <a href="https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_Felicitas_Garc%C3%ADa.pdf">Felicitas Garcia</a> · <a href="https://gestion.dc.uba.ar/media/academic/grade/thesis/Tesis_Mansini_v7.1.pdf">Leo Mansini</a></span></div>
+      <div class="yearrow"><span class="yr">2024</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-03-250-Renteria-Regnier.pdf">Dago de Renteria &amp; Melissa Regnier</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-07-15-Wappner-Daniel.pdf">Daniel Wappner</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2024-10-22-Patricio-Sagobal.pdf">Patricio Sabogal</a> · <a href="https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_2_xZVIWXA.pdf">Gabriela Croce</a></span></div>
+      <div class="yearrow"><span class="yr">2023</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2023-09-10-Balbi-Pablo.pdf">Pablo Balbi</a></span></div>
+      <div class="yearrow"><span class="yr">2021</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2021-02-22-Marasca-Dardo.pdf">Dardo Marasca</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2021-06-09-Curdi-Francisco.pdf">Francisco Curdi</a></span></div>
+      <div class="yearrow"><span class="yr">2019</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2019-12-17-Vera-Bogdanich.pdf">Vera Bogdanich</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2019-11-14-Manuel-Carrasco.pdf">Manuel Carrasco</a></span></div>
+      <div class="yearrow"><span class="yr">2018</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2018-12-16-Rodrigo-Campos.pdf">Rodrigo Campos Catelin</a></span></div>
+      <div class="yearrow"><span class="yr">2017</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2017-05-15-Palladino-Patricio.pdf">Patricio Palladino</a></span></div>
+      <div class="yearrow"><span class="yr">2016</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2016-04-14-Lera-Romero-Leandro.pdf">Leandro Lera Romero</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2016-03-16-Polstolski-Ivan.pdf">Ivan Postolski</a></span></div>
+      <div class="yearrow"><span class="yr">2015</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2015-11-24-Lamelas-Sebastian.pdf">Sebastian Lamelas Marcote</a></span></div>
+      <div class="yearrow"><span class="yr">2013</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2013-11-04-Paulovsky-Fernando.pdf">Fernando Paulovsky</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2013-10-03-Martinez-JuanManuel.pdf">Juan Manuel Martinez Caamaño</a></span></div>
+      <div class="yearrow"><span class="yr">2012</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2012-12-18-Zoppi-Edgardo.pdf">Edgardo Zoppi</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2012-05-10-Chicote-Marcos.pdf">Marcos Chicote</a></span></div>
+      <div class="yearrow"><span class="yr">2011</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2011-05-20-Cuervo-Bruno.pdf">Bruno Cuervo Parino</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2011-02-11-Tapicer-Jonathan.pdf">Jonathan Tapicer</a></span></div>
+      <div class="yearrow"><span class="yr">2010</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-02-17-Bendersky-Pablo.pdf">Pablo Bendersky</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-04-27-Neisen-Ariel.pdf">Ariel Neisen</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-07-20-Benavidez-Fernando.pdf">Fernando Benavidez</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-07-21-Tcach-Alexis.pdf">Alexis Tchach</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2010-12-22-Gumberg-Krasny.pdf">Matias Grumberg &amp; Gaston Krasny</a></span></div>
+      <div class="yearrow"><span class="yr">2009</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2009-08-26-Rouaux-Martin.pdf">Martin Rouaux</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2009-10-06-Taboada-Alejandro.pdf">Alejandro Taboada</a></span></div>
+      <div class="yearrow"><span class="yr">2007</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2007-12-04-deCaso-Guido.pdf">Guido de Caso</a></span></div>
+      <div class="yearrow"><span class="yr">2006</span><span class="nm"><a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2006-03-15-Piemonte-Diego.pdf">Diego Piemonte</a> · <a href="http://lafhis.dc.uba.ar/users/~diegog/licTesis/2006-09-01-Fernandez-Federico.pdf">Federico Fernandez</a></span></div>
+    </details>
+  </section>
+
+  <!-- SERVICE -->
+  <section id="service">
+    <div class="sec-head"><span class="node"></span><span class="rail"></span><h2><b>service</b> · last 5 years</h2></div>
+    <ul class="clean">
+      <li><b>FSE 2026</b> — Program Committee, ACM ESEC/FSE. Montreal, July 2026.</li>
+      <li><b>ASE 2025</b> — Program Committee, Industrial Track, ACM Automated Software Engineering. South Korea, Nov 2025.</li>
+      <li><b>FSE 2024 / 2025</b> — Program Committee, Industrial Track, ACM ESEC/FSE.</li>
+      <li><b>FSE 2022</b> — Co-chair, Artifacts Evaluation Track, ACM ESEC/FSE. Singapore, Nov 2022.</li>
+      <li><b>FMICS 2021</b> — Program Committee, Formal Methods for Industrial Critical Systems (QONFEST week).</li>
+      <li><b>ICSE 2021</b> — Program Committee, 43rd Intl. Conference on Software Engineering. Madrid, May 2021.</li>
+      <li><b>FSE 2020</b> — Program Committee, ACM ESEC/FSE. California, Nov 2020.</li>
+    </ul>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="sec-head"><span class="node"></span><span class="rail"></span><h2><b>tools</b> &amp; artifacts</h2></div>
+
+    <div class="card-group">
+      <p class="gl">Behavior validation via automatic abstraction</p>
+      <div class="grid">
+        <a class="card" href="http://lafhis.dc.uba.ar/dependex/contractor/Welcome.html">
+          <p class="ct">Contractor</p><p class="cd">Generates a finite abstract representation from a contract or API source for validation.</p></a>
+        <a class="card" href="http://lafhis.dc.uba.ar/contractor/contractor.net-web/">
+          <p class="ct">Contractor.NET</p><p class="cd">Visual Studio extension for .NET validation and specification strengthening.</p></a>
+      </div>
+    </div>
+
+    <div class="card-group">
+      <p class="gl">Heap memory consumption analysis</p>
+      <div class="grid">
+        <a class="card" href="http://lafhis.dc.uba.ar/users/~diegog/JConsume2/">
+          <p class="ct">JConsume2</p><p class="cd">Compositional analysis of heap memory consumption in Java.</p></a>
+        <a class="card" href="http://lafhis.dc.uba.ar/consume.net">
+          <p class="ct">Consume.Net</p><p class="cd">Compositional heap-consumption analysis for .NET programs.</p></a>
+        <a class="card" href="http://lafhis.dc.uba.ar/dependex/resourcecontracts/">
+          <p class="ct">Resource Contracts.NET</p><p class="cd">Extends Code Contracts to specify &amp; verify memory constraints.</p></a>
+        <a class="card" href="http://www.lafhis.dc.uba.ar/dependex/jscoper/">
+          <p class="ct">JScoper</p><p class="cd">Eclipse plug-in assisting translation to Java Real-Time.</p></a>
+      </div>
+    </div>
+
+    <div class="card-group">
+      <p class="gl">Verification</p>
+      <div class="grid">
+        <a class="card" href="http://lafhis.dc.uba.ar/dependex/budapest/">
+          <p class="ct">BudaPest</p><p class="cd">Automated software verifier of imperative programs.</p></a>
+        <a class="card" href="http://www.lafhis.dc.uba.ar/dependex/vintime/">
+          <p class="ct">VInTime</p><p class="cd">Tool suite for verification of real-time systems.</p></a>
+        <a class="card" href="http://www.lafhis.dc.uba.ar/dependex/obsslice/">
+          <p class="ct">ObsSlice</p><p class="cd">Timed-automata slicer based on observers.</p></a>
+      </div>
+    </div>
+
+    <div class="card-group">
+      <p class="gl">.NET program analysis</p>
+      <div class="grid">
+        <a class="card" href="https://github.com/edgardozoppi/analysis-net">
+          <p class="ct">analysis-net</p><p class="cd">Control-flow &amp; dataflow analysis library for .NET (by Edgardo Zoppi).</p></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap frow">
+    <div>
+      Diego Garbervetsky · ICC / CONICET · Universidad de Buenos Aires<br>
+      <a href="mailto:diegog@dc.uba.ar">diegog@dc.uba.ar</a> ·
+      <a href="http://www.facebook.com/diego.garbervetsky">Facebook</a> ·
+      <a href="https://twitter.com/diegogarber">Twitter</a>
+    </div>
+    <div class="fnote">↑ <a href="#top">back to top</a></div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var sun = document.getElementById('iconSun');
+    var moon = document.getElementById('iconMoon');
+    function apply(t) {
+      root.setAttribute('data-theme', t);
+      sun.style.display = t === 'dark' ? 'none' : 'block';
+      moon.style.display = t === 'dark' ? 'block' : 'none';
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    var initial = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    apply(initial);
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
