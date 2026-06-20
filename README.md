@@ -33,7 +33,8 @@ Current research interests are in Program analysis (in particular):
 **Previously**: Algoritmos y Estructuras de Datos 1/2, Automatic Software Validation and Verification, Automatic Program Analysis, Paradigmas de Programación, Organizacion del Computador 1 (verano).
 
 ### Phd Students
-
+- [Ian Grinspan](http://www.lafhis.dc.uba.ar/~igrinspan)
+- [Felicitas Garcia](http://www.lafhis.dc.uba.ar/~fgarcia)
 - [Daniel Wappner](http://www.lafhis.dc.uba.ar/~dwappner)
 - [Alexis Soifer](http://www.lafhis.dc.uba.ar/~asoifer)
 
