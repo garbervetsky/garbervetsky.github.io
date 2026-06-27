@@ -10,7 +10,7 @@ I am an Associate Professor at the [Computer Science Department](http://www.dc.u
 
 I work on static analysis techniques aimed at Java-like programs and Smart Contracts, automated program verification, program understanding and validation.
 
-Phone: +54 11 5285-7482, email: <diegog@dc.uba.ar>. Twitter: [@diegogarber](https://twitter.com/diegogarber)
+Phone: +54 11 5285-7482, email: <diegog@dc.uba.ar>. Linkedn: [diegogarbervetsky](https://www.linkedin.com/in/diegogarbervetsky/) Twitter: [@diegogarber](https://twitter.com/diegogarber)
 
 ## Research
 
