@@ -6,7 +6,7 @@ FTA Professor @ [LaFHIS](http://lafhis.dc.uba.ar/), [DC](http://www.dc.uba.ar/),
 
 ## About
 
-I am an Associate Professor at the [Computer Science Department](http://www.dc.uba.ar/), [School of Sciences](http://www.fcen.uba.ar/), [University of Buenos Aires](http://www.uba.ar/). I am also a Researcher at the [ICC](https://icc.fcen.uba.ar/)/[CONICET](http://www.conicet.gov.ar/). I am also Director of the [Institute of Research in Computer Sciences (ICC)](https://icc.fcen.uba.ar/).
+I am an Associate Professor at the [Computer Science Department](http://www.dc.uba.ar/), [School of Sciences](http://www.fcen.uba.ar/), [University of Buenos Aires](http://www.uba.ar/). I am also a Principal Researcher at the [ICC](https://icc.fcen.uba.ar/)/[CONICET](http://www.conicet.gov.ar/). 
 
 I work on static analysis techniques aimed at Java-like programs and Smart Contracts, automated program verification, program understanding and validation.
 
