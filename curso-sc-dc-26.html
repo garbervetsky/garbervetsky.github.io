@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>curso-sc-dc-26 | Introducción a la Programación y Análisis de Smart Contracts</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: #121a33;
+        --text: #e8ecff;
+        --muted: #b6c0e6;
+        --accent: #7aa2ff;
+        --accent-2: #9a7dff;
+        --ok: #7be0a8;
+        --warn: #ffd27d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: radial-gradient(1000px 500px at 10% -10%, #1a2452, transparent),
+          radial-gradient(900px 450px at 100% 0%, #2a1b52, transparent),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+
+      header {
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+      }
+
+      .subtitle {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .pill {
+        display: inline-block;
+        margin-top: 0.8rem;
+        padding: 0.25rem 0.65rem;
+        border: 1px solid #33407a;
+        border-radius: 999px;
+        color: var(--accent);
+        font-size: 0.9rem;
+      }
+
+      .card {
+        background: color-mix(in srgb, var(--card) 88%, black);
+        border: 1px solid #2b376f;
+        border-radius: 16px;
+        padding: 1rem 1rem 0.6rem;
+        margin: 1rem 0;
+      }
+
+      h2 {
+        margin-top: 0.4rem;
+        font-size: 1.35rem;
+      }
+
+      h3 {
+        margin-bottom: 0.3rem;
+        font-size: 1.07rem;
+      }
+
+      p {
+        margin-top: 0.35rem;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .classes {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .class-item {
+        border-top: 1px solid #25305e;
+        padding: 0.95rem 0.1rem;
+      }
+
+      .class-item:first-child {
+        border-top: none;
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 0.78rem;
+        margin-left: 0.45rem;
+        padding: 0.12rem 0.45rem;
+        border-radius: 999px;
+        border: 1px solid #40529f;
+        color: #c8d5ff;
+        vertical-align: middle;
+      }
+
+      .tag.workshop {
+        border-color: #4b8f75;
+        color: var(--ok);
+      }
+
+      .tag.analysis {
+        border-color: #a07843;
+        color: var(--warn);
+      }
+
+      .slides-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.75rem;
+      }
+
+      .slide-link {
+        display: block;
+        text-decoration: none;
+        color: var(--text);
+        background: #101733;
+        border: 1px dashed #4257aa;
+        border-radius: 12px;
+        padding: 0.8rem;
+      }
+
+      .slide-link:hover {
+        border-style: solid;
+        border-color: var(--accent-2);
+        transform: translateY(-1px);
+      }
+
+      .slide-link small {
+        display: block;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+
+      footer {
+        margin-top: 2rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      code {
+        background: #0e1530;
+        border: 1px solid #2a376b;
+        border-radius: 6px;
+        padding: 0.08rem 0.35rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>curso-sc-dc-26</h1>
+        <p class="subtitle">Introducción a la Programación y Análisis de Smart Contracts</p>
+        <span class="pill">Ethereum (cuentas) vs Cardano (EUTXO)</span>
+      </header>
+
+      <section class="card">
+        <h2>Idea central del curso</h2>
+        <p>
+          Cómo se escribe y cómo se rompe un contrato es consecuencia directa del modelo de cada blockchain.
+          Las nueve clases van en pares (teoría + taller), alternando Ethereum y Cardano, y cierran auditando
+          el mismo código que se escribió en los talleres.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Programa</h2>
+        <ul class="classes">
+          <li class="class-item">
+            <h3>1 · Fundamentos y comparación de modelos</h3>
+            <p class="muted">Qué resuelve una blockchain y cuándo no conviene usarla. Contraste: estado global mutable (Ethereum) vs estado distribuido en UTXOs (Cardano). Mini-demo con exploradores.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>2 · Intro a Solidity</h3>
+            <p class="muted">Programar en cuentas: mutar estado compartido persistente y costoso. Layout de datos, visibilidad, eventos y errores como consecuencia del modelo.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>3 · Taller Solidity: Foundry [Javi] <span class="tag workshop">taller</span></h3>
+            <p class="muted">Construcción de <code>Vault.sol</code> paso a paso con tests y deploy local. Este contrato se audita y se rompe en la Clase 7.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>4 · Intro a Aiken: validators en EUTXO</h3>
+            <p class="muted">El validator solo dice sí/no. La complejidad de armar la transacción vive off-chain. Clave para leer y romper validators.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>5 · Taller Aiken: escrow con deadline [Ian] <span class="tag workshop">taller</span></h3>
+            <p class="muted">La misma operación de la Clase 3 en EUTXO. Este escrow se audita en la Clase 9.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>6 · Análisis en Ethereum: amenazas y herramientas <span class="tag analysis">análisis</span></h3>
+            <p class="muted">Vulnerabilidades del modelo de cuentas y herramientas: análisis estático, fuzzing, verificación formal y LLMs.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>7 · Taller de análisis: explotar y arreglar (Ethereum) [Javi] <span class="tag workshop">taller</span> <span class="tag analysis">análisis</span></h3>
+            <p class="muted">Auditoría basada en explotabilidad: romper <code>Vault.sol</code>, escribir exploit, aplicar fix y verificar con tests.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>8 · Análisis en Cardano: amenazas EUTXO <span class="tag analysis">análisis</span></h3>
+            <p class="muted">Otro modelo, otro catálogo: double satisfaction, validación insuficiente de outputs y datums no autorizados.</p>
+          </li>
+
+          <li class="class-item">
+            <h3>9 · Taller de análisis: double satisfaction + cierre [Ian] <span class="tag workshop">taller</span> <span class="tag analysis">análisis</span></h3>
+            <p class="muted">Auditoría del escrow de la Clase 5: exploit, fix y cierre comparando ambos modelos lado a lado.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Trabajo final</h2>
+        <p>
+          <strong>“Adoptá una vulnerabilidad”</strong> (grupos de 2–3):
+          una vulnerabilidad en Ethereum y otra en Cardano que representen la misma idea de fondo.
+          Deben incluir explicación, ejemplo que compile, test que demuestre el bug, fix con costo,
+          y validación de herramientas ejecutadas realmente.
+        </p>
+        <p class="muted">Consignas y catálogo de temas en <code>docs/trabajo-final.md</code>.</p>
+      </section>
+
+      <section class="card">
+        <h2>Slides de cada clase</h2>
+        <p class="muted">Podés ir reemplazando cada <code>#</code> por el link real (Google Slides, PDF, etc.).</p>
+        <div class="slides-grid">
+          <a class="slide-link" href="#">Clase 1 · Fundamentos<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 2 · Intro Solidity<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 3 · Taller Foundry<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 4 · Intro Aiken<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 5 · Taller Aiken Escrow<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 6 · Análisis Ethereum<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 7 · Taller Exploit + Fix (ETH)<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 8 · Análisis Cardano<small>Agregar link</small></a>
+          <a class="slide-link" href="#">Clase 9 · Taller Double Satisfaction<small>Agregar link</small></a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Bibliografía base</h2>
+        <ul>
+          <li>Mastering Ethereum (2ª ed., 2025)</li>
+          <li>Mastering Cardano (IOG)</li>
+        </ul>
+        <p class="muted">Ambas disponibles gratis online.</p>
+      </section>
+
+      <footer>
+        Página del curso <strong>curso-sc-dc-26</strong> · Última actualización: agosto 2026
+      </footer>
+    </main>
+  </body>
+</html>
