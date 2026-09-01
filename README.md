@@ -95,7 +95,7 @@ Automatic abstraction for behavior validation:
 
 Analysis of heap memory consumption:
 
-- [JConsume2](JConsume2/): A compositional analysis for inferring heap memory consumption in Java.
+- [JConsume2](tools/JConsume2/): A compositional analysis for inferring heap memory consumption in Java.
 - [Consume.Net](http://lafhis.dc.uba.ar/consume.net): A compositional analysis for inferring heap memory consumption in .Net Programs.
 - [Resource Contracts.NET](http://lafhis.dc.uba.ar/dependex/resourcecontracts/): An extension of Code Contracts to specify and verify memory consumption constraints in .NET programs.
 - [JScoper](http://www.lafhis.dc.uba.ar/dependex/jscoper/): An Eclipse plug-in that assists translation of Java applications to Java Real Time ones.
