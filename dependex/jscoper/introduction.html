@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Introduction</title>
+</head>
+
+<body>
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-width: 0" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+				<td style="border-style:none; border-width:medium; COLOR: #21536a; font-style:normal; font-variant:normal; font-weight:bold; font-size:18px; font-family:Verdana, Arial, sans-serif" >
+					<strong>Introduction</strong></td>
+			</tr>
+  <tr>
+    <td width="100%" style="border-style: none; border-width: medium">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-style: none; border-width: medium">
+    <p align="justify">
+    <font face="Tahoma" size="2">Current trends in the embedded and real-time 
+    software industry are leading practitioners towards the use of object 
+    oriented programming languages such as Java. <br>
+    From a software engineering 
+    perspective, one of the most attractive issues in object-oriented design is 
+    the encapsulation of abstractions into objects that communicate through 
+    clearly&nbsp; defined interfaces. Because programmer-controlled memory&nbsp; 
+    management hinders modularity, object-oriented languages like Java, provide 
+    built-in garbage collection, that is, the automatic reclamation of heap-allocated 
+    storage after its last use by a program.
+    However, automatic memory management is not used in real-time embedded 
+    systems. The main reason for this is that the execution time of software 
+    with dynamic memory reclaiming is extremely difficult to predict. <br>
+    <br>
+    Therefore, in current industrial 
+    practices the use of garbage collection in real-time applications is simply 
+    forbidden. The typical alternate approach is as follows: programs allocate 
+    all memory during the initialization phase and free it upon termination. 
+    This leads to a very inefficient memory use, usually resulting in over-dimensioning 
+    the physical memory at an unnecessary additional cost. A automatic memory 
+    management techniques that meet real-time requirements would clearly have a 
+    tremendous impact on the design, implementation, and analysis of embedded 
+    software. These techniques would rule out programming errors produced by 
+    hazardous memory handling which are both hard to find and to correct. They 
+    would thus drastically reduce implementation and validation costs while 
+    considerably improving software quality. In order to overcome the drawbacks 
+    of current garbage collection algorithms, the Real-Time Specification for 
+    Java (RTSJ)[2] proposes the use of application-level memory management,&nbsp; 
+    based on the concept of “scoped memory”, for which an appropriate API is 
+    specified. Scoped-memory management relies on the idea of allocating objects 
+    in regions associated with the lifetime of a computation unit (method or 
+    thread). Regions are deallocated when the corresponding computational units 
+    finish their execution [6, 9]. Unfortunately, the task of determining the 
+    object scopes is left to the programmer. Some techniques have been proposed 
+    to address this problem by automatically verifying the scopingrules using 
+    Pointer and Escape Analysis [8, 1]. These techniques can be applied to 
+    conservatively determine if an object“ escape” or is “captured by” a method 
+    (or thread). Intuitively, an object escapes a method when its lifetime is 
+    longer than the method’s lifetime, so it can not be collected when the 
+    method finishes its execution. In contrast, an object is&nbsp; captured by 
+    the method when it can be safely collected at the end of the method’s 
+    execution. </font></p>
+    <p align="justify"><font face="Tahoma" size="2">Our main goal is to provide developers with 
+    a tool that will assist the translation of Java applications into Java 
+    Realtime compliant applications. More precisely, the idea is to enable 
+    translation of heap-based Java programs into scoped-based ones, by 
+    leveraging GUI features for navigation, specification, translation, fine-tuning 
+    and debugging.</font></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</td>
+  </tr>
+</table>
+
+</body>
+
+</html>

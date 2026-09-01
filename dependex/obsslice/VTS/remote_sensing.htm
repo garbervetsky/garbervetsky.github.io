@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-mx">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Remote Sensing</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+
+<p><font face="Tahoma" size="4" color="#800080">Remote Sensing</font></p>
+<p align="justify"><font face="Tahoma" size="2"><font color="#800080">Remote Sensing</font> is a system 
+basically consisting of a central component and two remote sensors. Sensors 
+periodically sample a set of environmental variables and store their values in 
+shared memory. When the central component needs them, it broadcasts a signal to 
+the sensors with a minimal inter-arrival time ($RqstSent$ event). Each sensor 
+runs a thread devoted to handle this message by reading the last stored value 
+from shared memory and sending it back to the central component. The latter 
+pairs the readings so that another process can use that piece of information to 
+perform certain actions on some actuators.</font></p>
+<p align="center"><font face="Tahoma" size="2">
+<img border="0" src="images/remotearch2.jpg" width="523" height="251"></font></p>
+<p align="center"><font face="Tahoma" size="1">Figure 1: Remote Sensing: SUA architecture</font></p>
+<p align="justify"><font face="Tahoma" size="2"><b>Correlation Scenario</b>: A correlation requirement is 
+informally stated as &quot;paired values should have been sampled in not-too-distant 
+time instants''.</font></p>
+<p align="center"><font size="2">
+<img border="0" src="images/remotesensing.jpg" width="254" height="118"></font></p>
+<font SIZE="2">
+<p align="justify"><font face="Tahoma">Activity Table ?</font></p>
+<p align="justify">&nbsp;</p>
+</font>
+<p align="justify"><font face="Tahoma" size="2"><b>Refined Correlation Scenario</b>:
+<font color="#800080">Remote Sensing</font> instead of detailing the scenario, a 
+couple of {$RqstSent$} events were added to the original one, in order to check 
+correlation over the second request only; since observing the evolution of the 
+second request should suffice to verify the property. This is a worst-case 
+specialization. Time savings are dramatic compared to the original scenario (even 
+to the \emph{sliced} original scenario).</font></p>
+<p align="justify"><font face="Tahoma" size="2">ObsSlice determines: (a) the irrelevance of a sampler as 
+soon as its values are read (ReadV1, ReadV2); (b) that a reader and its latch 
+are not longer relevant when the corresponding value is sent (V1Sent, V2Sent, 
+resp.); and (c) that the behavior of each net transporting those values can be 
+ignored as soon as the corresponding value arrives (arrivesV1, arrivesV2, resp.). 
+On the other hand, the $NetRequest$ component (the initiator of a broadcast 
+request) should remain active since the scenario stipulates that there are 
+exactly two request in the analyzed trace. Obviously, all components are 
+deactivated if the underlying observer reaches an accept or trap location.</font></p>
+<p align="center"><font face="Tahoma" size="2">
+<img border="0" src="images/remotesensingSpecialized.jpg" width="276" height="129"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="left">
+<font SIZE="2">
+<a href="../VTS_ObsSlice.html#CaseStudies">Back to Case Studies</a></font></p>
+
+</body>
+
+</html>

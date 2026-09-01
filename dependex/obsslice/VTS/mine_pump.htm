@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-mx">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Mine Pump</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
+</head>
+
+<body>
+
+<p><font face="Tahoma" color="#800080" size="4">Mine Pump </font>
+<font face="Tahoma" size="4">(Failure Detection Subsytem)</font></p>
+<p align="justify"><font face="Tahoma" size="2"><font color="#800080">Minepump</font> is a design of a 
+fault-detection mechanism for a distributed mine-drainage controller. A watchdog 
+task periodically checks the availability of a water level sensing device by 
+sending a request and extracting acknowledgements that were received and queued 
+during the previous cycle (by another sporadic task). When the watchdog finds 
+the queue empty, it registers a fault condition in a shared memory which is 
+periodically read, and forwarded to a remote console, by a proxy task.</font></p>
+<p align="justify"><font face="Tahoma" size="2">Size: 9 TAs, 8 Clocks</font></p>
+<p align="justify"><font face="Tahoma" size="2"><b>Original Scenario</b>: The proposed scenario verifies 
+that the failure of the high-low water sensor is always informed to the remote 
+operator before a given deadline. This scenario correctly captures the 
+requirement due to the fact that the system models a permanent single fail and 
+there exists only one alarm display event.</font></p>
+<p align="center"><font face="Tahoma" size="2">
+<img border="0" src="images/Minepumporig.jpg" width="160" height="25"></font></p>
+<p align="justify"><font face="Tahoma" size="2">Tabla: mine2.active</font></p>
+<p align="justify"><font face="Tahoma" size="2"><b>Refined Scenario</b>: Scenario sequentiality allows us 
+to illustrate how the slicer manages to disable components at each point (actually 
+this is done over the underlying observer). As depicted in the Tables~\ref{table:time_memory} 
+and \ref{table:counter_examples}, speed improvements are significant and the 
+trace generated is halved in number of steps.</font></p>
+<font SIZE="2">
+<p>&nbsp;</p>
+</font>
+<p align="center"><font face="Tahoma" size="2">
+<img border="0" src="images/minepumpSpecialized.jpg" width="535" height="140"></font></p>
+<font SIZE="2">
+<p>&nbsp;</p>
+<p><font face="Tahoma">Tabla de actividad:</font></p>
+</font>
+
+<p>
+<font SIZE="2">
+<a href="../VTS_ObsSlice.html#CaseStudies">Back to Case Studies</a></font></p>
+
+</body>
+
+</html>
