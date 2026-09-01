@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contractor.NET is an automated tool that takes a piece of software and generates a finite abstract representation of it. By analysing the resulting finite machine, the user can discover potential anomalies in the input contract such as invariants, preconditions or postconditions that are too weak, therefore allowing unwanted behaviour.">
+    <meta name="author" content="Leandro Lera Romero">
+
+    <title>Contractor.NET: A .NET validation and specification strengthening tool</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Tour -->
+    <link href="css/hopscotch.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Contractor.NET</h1>
+                        <h3>A .NET validation and specification strengthening tool</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="https://bitbucket.org/lleraromero/contractor-net/get/master.zip" class="btn btn-default btn-lg"><i class="fa fa-download fa-fw"></i> <span class="network-name">Download</span></a>
+                            </li>
+                            <li>
+                                <a href="https://bitbucket.org/lleraromero/contractor-net/overview" class="btn btn-default btn-lg"><i class="fa fa-bitbucket fa-fw"></i> <span class="network-name">Source Code</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">From a piece of software to a finite representation</h2>
+                    <p class="lead">Contractor.NET is an automated tool that takes a piece of software and generates a finite abstract representation of it. By analysing the resulting finite machine, the user can discover potential anomalies in the input contract such as invariants, preconditions or postconditions that are too weak, therefore allowing unwanted behaviour. </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive bordered" src="img/stack.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Verification of client code</h2>
+                    <p class="lead">It allows the user to augment the original contract specification for the input class with the inferred typestate information, therefore enabling the verification of client code.</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/instrumented.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">The theory behind Contractor.NET</h2>
+                    <ul>
+                        <li>
+                          Guido de Caso, Víctor A. Braberman, Diego Garbervetsky, Sebastián Uchitel,
+                          Enabledness-based program abstractions for behavior validation.
+                          ACM Trans. Softw. Eng. Methodol. 22(3): 25 (2013)
+                          <a href="http://publicaciones.dc.uba.ar/Publications/2013/DBGU13/Enabledness-based%20Program%20Abstractions%20for%20Behaviour%20Validation.pdf">[PDF]</a>
+                          <a href="http://publicaciones.dc.uba.ar/Publications/2013/DBGU13/">[BIB]</a>
+                        </li>
+                        <li>
+                          Guido de Caso, Víctor A. Braberman, Diego Garbervetsky, Sebastián Uchitel,
+                          Automated Abstractions for Contract Validation.
+                          IEEE Trans. Software Eng. 38(1): 141-162 (2012)
+                          <a href="http://publicaciones.dc.uba.ar/Publications/2012/DBGU12a/05639021.pdf">[PDF]</a>
+                          <a href="http://publicaciones.dc.uba.ar/Publications/2012/DBGU12a/">[BIB]</a>
+                        </li>
+                        <li>
+                            Guido de Caso, Víctor Braberman, Diego Garbervetsky, Sebastián Uchitel,
+                            Program Abstractions for Behaviour Validation,
+                            International Conference on Software Engineering 2011.
+                            Honolulu, HI, U.S.A., May 21-28th, 2011
+                            <a href="http://doi.acm.org/10.1145/1985793.1985846">[PDF]</a>
+                            <a href="http://lafhis.dc.uba.ar/misc/~gdecaso/files/icse11_slides.pdf">[Slides]</a>
+                            <a href="http://www.youtube.com/watch?v=9-ya1AcAmwo">[Video]</a>
+                            <a href="http://dblp.uni-trier.de/rec/bibtex/conf/icse/CasoBGU11">[BIB]</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <ul>
+                        <li>
+                            Guido de Caso, Víctor Braberman, Diego Garbervetsky, Sebastián Uchitel,
+                            Automated Abstractions for Contract Validation,
+                            IEEE Transactions on Software Engineering (in press)
+                            <a href="http://www.computer.org/portal/web/csdl/doi/10.1109/TSE.2010.98">[PDF]</a>
+                            <a href="http://www.computer.org/plugins/dl/citation/abs/bibtex/description/doi/10.1109/TSE.2010.98.bib">[BIB]</a>
+                        </li>
+                        <li>
+                            Guido de Caso, Víctor Braberman, Diego Garbervetsky, Sebastián Uchitel,
+                            Contractor for Code Validation, Technical Report,
+                            Departamento de Computación, FCEyN, UBA. 2010.
+                            <a href="http://publicaciones.dc.uba.ar/Publications/2010/DBGU10a/">[PDF and BIB]</a>
+                        </li>
+                        <li>
+                            Guido de Caso,
+                            Behavioural Validation of Software Engineering Artefacts,
+                            International Conference on Software Engineering 2010: Doctoral Symposium.
+                            Cape Town, South Africa, May 4th, 2010
+                            <a href="http://doi.acm.org/10.1145/1810295.1810380">[PDF]</a>
+                            <a href="http://dblp.uni-trier.de/rec/bibtex/conf/icse/Caso10">[BIB]</a>
+                        </li>
+                        <li>
+                            Guido de Caso, Víctor Braberman, Diego Garbervetsky, Sebastián Uchitel,
+                            Validation of Contracts using Enabledness Preserving Finite State Abstractions,
+                            International Conference on Software Engineering 2009.
+                            Vancouver, Canada, May 16-24th, 2009
+                            <a href="http://dl.acm.org/citation.cfm?id=1555059">[PDF]</a>
+                            <a href="http://lafhis.dc.uba.ar/misc/~gdecaso/files/icse09_slides.pdf">[Slides]</a>
+                            <a href="http://www.youtube.com/watch?v=5-Zxqto6gMc">[Video]</a>
+                            <a href="http://dblp.uni-trier.de/rec/bibtex/conf/icse/CasoBGU09">[BIB]</a>
+                        </li>
+                        <li>
+                            Edgardo Zoppi, Víctor Braberman, Guido de Caso, Diego Garbervetsky, Sebastián Uchitel,
+                            Contractor.NET: inferring typestate properties to enrich code contracts,
+                            1st Workshop on Developing Tools as Plug-ins on TOPI 2011.
+                            <a href="http://dl.acm.org/citation.cfm?id=1984721">[PDF]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Tutorial <button class="btn btn-default" onclick="hopscotch.startTour(tour);">Start!</button></h2>
+                    <div id="tutorial1" style="width:20px;height:20px;position:absolute;top:160px;left:25px;"></div>
+                    <div class="centered"><img src="img/contractor-tutorial.png" alt="Tutorial" width="100%" /></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <!-- ==== TEAM MEMBERS ==== -->
+    <div class="content-section-a">
+        <div class="container" id="team" name="team">
+        <br>
+            <div class="row white centered">
+                <h2 class="section-heading">Meet out awesome team</h2>
+                <hr>
+                <br>
+                <div class="col-lg-3 centered">
+                    <img class="img img-circle" src="img/team/uchitel.jpg" height="120px" width="120px" alt="">
+                    <br>
+                    <h4><b><a href="http://lafhis.dc.uba.ar/~suchitel">Sebastian Uchitel, Ph.D.</a></b></h4>
+                </div><!-- col-lg-3 -->
+
+                <div class="col-lg-3 centered">
+                    <img class="img img-circle" src="img/team/braberman.jpg" height="120px" width="120px" alt="">
+                    <br>
+                    <h4><b><a href="http://lafhis.dc.uba.ar/~vbraber">Victor Braberman, Ph.D.</a></b></h4>
+                </div><!-- col-lg-3 -->
+
+                <div class="col-lg-3 centered">
+                    <img class="img img-circle" src="img/team/garbervetsky.jpg" height="120px" width="120px" alt="">
+                    <br>
+                    <h4><b><a href="http://lafhis.dc.uba.ar/~diegog">Diego Garbervetsky, Ph.D.</a></b></h4>
+                </div><!-- col-lg-3 -->
+
+                <div class="col-lg-3 centered">
+                    <img class="img img-circle" src="img/team/zoppi.png" height="120px" width="120px" alt="">
+                    <br>
+                    <h4><b><a href="http://lafhis.dc.uba.ar/~ezoppi">Edgardo Zoppi, M.Sc.</a></b></h4>
+                </div><!-- col-lg-3 -->
+
+                <div class="col-lg-3 centered">
+                    <img class="img img-circle" src="img/team/leraromero.jpg" height="120px" width="120px" alt="">
+                    <br>
+                    <h4><b><a href="https://ar.linkedin.com/in/lleraromero">Leandro Lera Romero, M.Sc.</a></b></h4>
+                </div><!-- col-lg-3 -->
+                
+                <div class="col-lg-3 centered">
+                    <img class="img img-circle" src="img/team/martinelli.jpg" height="120px" width="120px" alt="">
+                    <br>
+                    <h4><b><a href="http://lafhis.dc.uba.ar/~fmartinelli">Fernán Martinelli, M.Sc.</a></b></h4>
+                </div><!-- col-lg-3 -->
+
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="http://lafhis.dc.uba.ar/"><img src="img/lafhis.png" alt="LAFHIS"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Tour -->
+    <script src="js/hopscotch.0.2.5.min.js"></script>
+    <script src="js/hopscotch.tour.js"></script>
+
+</body>
+
+</html>
