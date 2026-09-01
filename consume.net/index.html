@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consume.NET</title>
+<meta name="description" content="Consume.NET — a compositional static analyzer for heap-memory consumption in .NET Common Intermediate Language (CIL) programs.">
+<style>
+  body {
+    margin: 0;
+    padding: 2.5rem 1.25rem 3rem;
+    background: #FAFAFB;
+    color: #3A404C;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .tag {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #4F46E5;
+    margin-bottom: .5rem;
+  }
+  h1 {
+    color: #14181F;
+    margin: 0 0 1rem;
+  }
+  h2 {
+    color: #14181F;
+    margin: 2rem 0 .75rem;
+    font-size: 1.15rem;
+  }
+  ul {
+    padding-left: 1.25rem;
+  }
+  li {
+    margin-bottom: .75rem;
+  }
+  a {
+    color: #4F46E5;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E4E6EC;
+    font-size: .8rem;
+    color: #6B7280;
+  }
+</style>
+</head>
+<body>
+<main>
+  <a class="back-link" href="../index.html">&larr; Back to Diego Garbervetsky's homepage</a>
+
+  <p class="tag">Tool archive</p>
+  <h1>Consume.NET</h1>
+  <p>
+    Consume.NET is a compositional static analyzer for heap-memory consumption
+    in .NET Common Intermediate Language (CIL) programs.
+  </p>
+
+  <h2>Overview</h2>
+  <p>
+    The analysis infers parametric upper bounds on the number of simultaneously
+    live objects. It builds method summaries that are composed across calls,
+    taking into account allocations, objects that escape a method, polymorphism,
+    and the automatic (garbage-collected) memory management of .NET programs.
+  </p>
+
+  <h2>Availability</h2>
+  <p>
+    No public download is currently offered for this tool.
+  </p>
+
+  <h2>Selected publications</h2>
+  <ul>
+    <li>
+      V. Braberman, D. Garbervetsky, S. Hym, and S. Yovine.
+      <em>Summary-based inference of quantitative bounds of live heap objects.</em>
+      Science of Computer Programming, 2014.
+    </li>
+    <li>
+      D. Garbervetsky, S. Yovine, V. Braberman, M. Rouaux, and A. Taboada.
+      <em>Quantitative dynamic-memory analysis for Java.</em>
+      Concurrency and Computation: Practice and Experience, 2011.
+    </li>
+  </ul>
+
+  <h2>Contributors</h2>
+  <p>
+    Diego Garbervetsky, Víctor Braberman, and Sergio Yovine.
+  </p>
+
+  <footer>
+    This is a short reconstruction of the original Consume.NET project page,
+    based on content recovered from the
+    <a href="https://web.archive.org/web/20230601163245/https://lafhis.dc.uba.ar/consume.net" target="_blank" rel="noopener noreferrer">Wayback Machine archive</a>
+    of the historical site. It is not a full replica.
+  </footer>
+</main>
+</body>
+</html>
