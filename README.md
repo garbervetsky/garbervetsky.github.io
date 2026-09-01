@@ -59,7 +59,7 @@ Current research interests are in Program analysis (in particular):
 ### Undergraduate Students (similar to MSc thesis)
 
 - 2026: [José Cacherosky](licTesis/2026-08-25-Cacherosky-Jose.pdf)
-- 2025-26 (Tesis +Acompañiamiento): Ana Roizen. Paulo Casullo. Sergio Cantore. Fernando Andrada. Tomas Scally. Franco Castelacci. Mariano Dal Vechio. Matías Incem, Alejandra Rodriguez. Matías Entin, Dario Guzik.
+- 2025-26 (Tesis +Acompañiamiento): Ana Roizen. Paulo Casullo. Sergio Cantore. Fernando Andrada. Tomas Scally. Franco Castelacci. Mariano Dal Vechio. Matías Incem, Alejandra Rodriguez. Matías Entin, Dario Guzik. (Programa +Acompañamiento)
 - 2025: [Ian Grinspan](https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_Ian_RdHFhKy.pdf) (co-director Javier Godoy), [Felicitas Garcia](https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_Felicitas_Garc%C3%ADa.pdf) (co-director Javier Godoy), [Leo Mansini](https://gestion.dc.uba.ar/media/academic/grade/thesis/Tesis_Mansini_v7.1.pdf)
 - 2024: [Dago de Renteria y Melissa Regnier](licTesis/2024-03-250-Renteria-Regnier.pdf) (co-director JP Galeotti) [Daniel Wappner](licTesis/2024-07-15-Wappner-Daniel.pdf) (co-advisor Javier Godoy), [Patricio Sabogal](licTesis/2024-10-22-Patricio-Sagobal.pdf), [Gabriela Croce](https://gestion.dc.uba.ar/media/academic/grade/thesis/tesis_2_xZVIWXA.pdf) (co-advisor Virginia Brassesco)
 - 2023: [Pablo Balbi](licTesis/2023-09-10-Balbi-Pablo.pdf)
